@@ -22,6 +22,16 @@ class PostManager
         }
         return $list;
     }
+
+    public function getPost($id)
+    {
+        $response = $this->_bdd->prepare("SELECT * FROM posts WHERE id= :id");
+        $response->execute(
+            array('id'=>$id)
+        );
+        $post = $response->fetch();
+        return new Post($post);
+    }
 }
 
 ?>
