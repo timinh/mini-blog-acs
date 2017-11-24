@@ -18,6 +18,8 @@ $controller = '../controllers/liste.php';
 if(isset($_GET['action'])) {
     if($_GET['action'] == 'detail') {
         $controller = '../controllers/detail.php';
+    }elseif ($_GET['action']== 'creer') {
+        $controller = '../controllers/creer.php';
     }
 }
 

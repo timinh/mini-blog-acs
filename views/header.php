@@ -17,8 +17,16 @@
 
   <body class="container-fluid">
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Mini-blog ACS</a>
+      <a class="navbar-brand" href="index.php">Mini-blog ACS</a>
     </nav>
     <main class="container">
     <div class="row">
       <div class="col-md-9 col-sm-9 col-xs-9">
+        <?php 
+        if(isset($_SESSION['flash_message'])){
+          echo "<span class=\"alert alert-info\">";
+          echo $_SESSION['flash_message'];
+          $_SESSION['flash_message'] = null;
+          echo "</span>";
+        }
+        ?>
