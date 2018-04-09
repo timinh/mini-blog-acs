@@ -6,6 +6,7 @@ $config = [
     'db_user'     => 'root',
     'db_password' => '',
     'db_name'     => 'mini-blog-acs',
+    'copyright'   => '&copy; Votre nom - 2018'
 ];
 
 ?>

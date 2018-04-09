@@ -11,4 +11,4 @@ if(isset($_GET['id'])){
     }
 }
 
-header('Location: /');
+header('Location: ./');

@@ -18,7 +18,7 @@ if(isset($_GET['id'])){
     }
     $post = $pm->getPost($id_post);
 }else{
-    header('Location: /');
+    header('Location: ./');
 }
 
 // on définie l'action du formulaire

@@ -7,7 +7,7 @@ if(isset($_GET['id'])){
     $pm = new PostManager($bdd);
     $post = $pm->getPost($_GET['id']);
 }else{
-    header('Location: /');
+    header('Location: ./');
 }
 
 // on affiche la vue

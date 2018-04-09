@@ -3,7 +3,7 @@
     </main>
     <footer class="container-fluid">
         <nav class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand mx-auto" href="#">&copy; gillesr 2017</a>
+          <a class="navbar-brand mx-auto" href="#"><?php echo $config['copyright']; ?></a>
         </nav>
     </footer>
 
