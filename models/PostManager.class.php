@@ -35,10 +35,29 @@ class PostManager
 
     public function save($donnees)
     {
-        $response =$this->_bdd->prepare("INSERT INTO `posts` (`id`, `title`, `content`, `author`, `category`, `created_at`, `updated_at`) VALUES (NULL, '".$donnees['title']."', '".$donnees['content']."', '".$donnees['author']."', '".$donnees['category']."', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);");
+        $response = $this->_bdd->prepare("INSERT INTO `posts` (`id`, `title`, `content`, `author`, `category`, `created_at`, `updated_at`) VALUES (NULL, '".$donnees['title']."', '".$donnees['content']."', '".$donnees['author']."', '".$donnees['category']."', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);");
         var_dump($response);
         $response->execute();
         return $this->_bdd->lastInsertId();
+    }
+
+    public function update($donnees, $id)
+    {
+        $req = "UPDATE `posts` SET ";
+        foreach ($donnees as $key => $value) {
+            $req.= "`".$key."` = '".addslashes($value)."', ";
+        }
+        $req = rtrim($req, ', ');
+        $req.= " WHERE id=".$id."";
+        $response = $this->_bdd->prepare($req);
+        return $response->execute();
+    }
+
+    public function delete($id)
+    {
+        $req = "DELETE FROM `posts` WHERE id=".$id;
+        $response = $this->_bdd->prepare($req);
+        return $response->execute();
     }
 }
 

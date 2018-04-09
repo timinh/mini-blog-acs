@@ -18,8 +18,14 @@ $controller = '../controllers/liste.php';
 if(isset($_GET['action'])) {
     if($_GET['action'] == 'detail') {
         $controller = '../controllers/detail.php';
-    }elseif ($_GET['action']== 'creer') {
+        $fichier_js = '<script src="./js/script.js"></script>';
+    }elseif ($_GET['action'] == 'creer') {
         $controller = '../controllers/creer.php';
+    }elseif ($_GET['action'] == 'edit') {
+        $controller = '../controllers/edit.php';
+        $fichier_js = '<script src="./js/script.js"></script>';
+    }elseif ($_GET['action'] == 'delete') {
+        $controller = '../controllers/delete.php';
     }
 }
 
